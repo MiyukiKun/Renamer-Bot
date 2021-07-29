@@ -81,7 +81,7 @@ async def rem(event):
     current_id=event.id
     reply_id=reply.id
     text=text.strip()
-    text2='-100'.join(text)
+    text2='-100'+text
     try:
         text1=int(text2)
         for i in range(reply_id,current_id):
