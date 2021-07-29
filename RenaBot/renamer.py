@@ -81,11 +81,12 @@ async def rem(event):
     current_id=event.id
     reply_id=reply.id
     text=text.strip()
+    text2='-100'.join(text)
     try:
-        text1=int(text)
+        text1=int(text2)
         for i in range(reply_id,current_id):
             x = await C.get_messages(event.chat_id, ids=i)
-            await C.send_message(int(text),x)
+            await C.send_message(int(text1),x)
     except:
         for i in range(reply_id,current_id):
             x = await C.get_messages(event.chat_id, ids=i)
