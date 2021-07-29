@@ -81,9 +81,15 @@ async def rem(event):
     current_id=event.id
     reply_id=reply.id
     text=text.strip()
-    for i in range(reply_id,current_id):
+    try:
+        text1=int(text)
+        for i in range(reply_id,current_id):
         x = await C.get_messages(event.chat_id, ids=i)
         await C.send_message(int(text),x)
+    except:
+        for i in range(reply_id,current_id):
+            x = await C.get_messages(event.chat_id, ids=i)
+            await C.send_message(text,x)
         
 @C.on(events.NewMessage(pattern="/remthumb"))
 async def rem(event):
