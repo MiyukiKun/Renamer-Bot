@@ -1,4 +1,4 @@
-from config import client as C
+from RenaBot.config import client as C
 from telethon import events,Button
 from FastTelethonhelper import download_without_progressbar
 from FastTelethonhelper import upload_without_progress_bar
